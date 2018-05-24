@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.activiti.cloud.examples</groupId>
   <artifactId>infra-gateway</artifactId>
-  <version>1.0.0</version>
+  <version>1.0-SNAPSHOT</version>
   <name>Activiti Cloud :: Infrastructure Gateway</name>
   <properties>
     <java.version>1.8</java.version>
