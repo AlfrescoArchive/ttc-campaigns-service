@@ -6,6 +6,7 @@ spring:
         locator:
           enabled: true
           url-expression: "'http://'+serviceId"
+
 server.port: 8080
 logging:
   level:
