@@ -36,7 +36,7 @@ public class CampaignsRegistryController {
 
     @RequestMapping(path = "/")
     public String helloFromGateway() {
-        return "{ 'welcome' : 'Hello from the Trending Topic Campaigns Gateway' }";
+        return "{ \"welcome\" : \"Hello from the Trending Topic Campaigns Gateway\" }";
     }
 
     @RequestMapping(path = "/campaigns")
