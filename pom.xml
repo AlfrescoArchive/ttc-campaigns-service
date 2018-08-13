@@ -11,9 +11,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-    <spring-cloud.version>Finchley.RC2</spring-cloud.version>
-    <spring.cloud.k8s.version>0.3.0.RC1</spring.cloud.k8s.version>
-    <spring.boot.version>2.0.2.RELEASE</spring.boot.version>
+    <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+    <spring.cloud.k8s.version>0.3.0.RELEASE</spring.cloud.k8s.version>
+    <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
   </properties>
   <dependencyManagement>
 		<dependencies>
@@ -98,30 +98,5 @@
       </plugin>
     </plugins>
   </build>
-  <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository>
-    <repository>
-      <id>alfresco-snapshots</id>
-      <name>Alfresco Snapshots</name>
-      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository>
-  </repositories>
+  
 </project>
