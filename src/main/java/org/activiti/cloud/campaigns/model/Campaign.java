@@ -1,4 +1,4 @@
-package org.activiti.cloud.gateway.model;
+package org.activiti.cloud.campaigns.model;
 
 public class Campaign {
 

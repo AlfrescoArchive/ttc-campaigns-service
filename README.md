@@ -1,4 +1,4 @@
-# BluePrint - Trending Topic Campaigns: Infrastructural Gateway
+# BluePrint - Trending Topic Campaigns: Campaigns Service
 This project is using the Spring Cloud Gateway project along the Spring Cloud Kubernetes project to create dynamic routes
 to the services registered inside a Kubernetes namespace. 
 

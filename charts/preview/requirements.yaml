@@ -9,5 +9,5 @@ dependencies:
   repository: https://chartmuseum.build.cd.jenkins-x.io
   version: 2.3.56
 - alias: preview
-  name: ttc-infra-gateway
-  repository: file://../ttc-infra-gateway
+  name: ttc-campaigns-service
+  repository: file://../ttc-campaigns-service
