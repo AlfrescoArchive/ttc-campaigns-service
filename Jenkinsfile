@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
       ORG               = 'salaboy'
-      APP_NAME          = 'ttc-infra-gateway'
+      APP_NAME          = 'ttc-campaigns-service'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
@@ -50,7 +50,7 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
             sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
           }
-          dir ('./charts/ttc-infra-gateway') {
+          dir ('./charts/ttc-campaigns-service') {
             container('maven') {
               sh "make tag"
             }
@@ -70,7 +70,7 @@ pipeline {
           branch 'develop'
         }
         steps {
-          dir ('./charts/ttc-infra-gateway') {
+          dir ('./charts/ttc-campaigns-service') {
             container('maven') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 

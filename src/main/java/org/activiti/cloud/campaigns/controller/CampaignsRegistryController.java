@@ -1,21 +1,20 @@
-package org.activiti.cloud.gateway.controller;
+package org.activiti.cloud.campaigns.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.activiti.cloud.gateway.model.Campaign;
+import org.activiti.cloud.campaigns.model.Campaign;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitionLocator;
-import org.springframework.cloud.gateway.discovery.DiscoveryLocatorProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping(path = "/v1")
 @RestController
 public class CampaignsRegistryController {
 
@@ -27,16 +26,10 @@ public class CampaignsRegistryController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @Bean
-    public DiscoveryClientRouteDefinitionLocator discoveryClientRouteLocator(DiscoveryClient discoveryClient,
-                                                                             DiscoveryLocatorProperties properties) {
-        return new DiscoveryClientRouteDefinitionLocator(discoveryClient,
-                                                         properties);
-    }
 
     @RequestMapping(path = "/")
-    public String helloFromGateway() {
-        return "{ \"welcome\" : \"Hello from the Trending Topic Campaigns Gateway\" }";
+    public String helloFromCampaigns() {
+        return "{ \"welcome\" : \"Hello from the Trending Topic Campaigns Service \" }";
     }
 
     @RequestMapping(path = "/campaigns")
