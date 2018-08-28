@@ -27,6 +27,11 @@ public class CampaignsRegistryController {
 
 
     @RequestMapping(path = "/")
+    public String helloFromCampaigns() {
+        return "{ \"welcome\" : \"Hello from the Trending Topic Campaigns Service \" }";
+    }
+
+    @RequestMapping(path = "/campaigns")
     public List<Campaign> getCampaigns() {
         List<Campaign> campaigns = new ArrayList<>();
         try {
