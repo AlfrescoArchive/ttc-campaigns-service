@@ -24,7 +24,7 @@ public class CampaignsRegistryController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
-    
+
 
     @RequestMapping(path = "/")
     public List<Campaign> getCampaigns() {
