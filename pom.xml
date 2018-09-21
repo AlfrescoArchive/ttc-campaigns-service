@@ -14,7 +14,7 @@
     <spring-cloud.version>Finchley.SR1</spring-cloud.version>
     <spring-cloud-k8s.version>0.3.0.RELEASE</spring-cloud-k8s.version>
     <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
-    <activiti.cloud.version>7.0.0.Beta1</activiti.cloud.version>
+    <activiti.cloud.version>7.0.0-SNAPSHOT</activiti.cloud.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -39,6 +39,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>org.activiti.cloud.dependencies</groupId>
+        <artifactId>activiti-cloud-dependencies</artifactId>
+        <version>${activiti.cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
@@ -51,9 +58,8 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.activiti.cloud</groupId>
+      <groupId>org.activiti.cloud.common</groupId>
       <artifactId>activiti-cloud-services-common-security-keycloak</artifactId>
-      <version>${activiti.cloud.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
