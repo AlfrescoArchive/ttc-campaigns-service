@@ -3,7 +3,7 @@ pipeline {
       label "jenkins-maven"
     }
     environment {
-      ORG               = 'salaboy'
+      ORG               = 'activiti'
       APP_NAME          = 'ttc-campaigns-service'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
@@ -22,10 +22,6 @@ pipeline {
             sh "mvn versions:set -DnewVersion=$PREVIEW_VERSION"
             sh "mvn install"
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
-
-            sh "jx step validate --min-jx-version 1.2.36"
-            sh "jx step post build --image \$JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST:\$JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT/$ORG/$APP_NAME:$PREVIEW_VERSION"
-            sh "updatebot push-regex -r "\s+tag: (.*)" -v \$(cat VERSION) --previous-line "\s+repository: activiti/ttc-campaigns-service" **/values.yaml) --merge false"
           }
 
           dir ('./charts/preview') {
@@ -38,12 +34,12 @@ pipeline {
       }
       stage('Build Release') {
         when {
-          branch 'develop'
+          branch 'master'
         }
         steps {
           container('maven') {
             // ensure we're not on a detached head
-            sh "git checkout develop"
+            sh "git checkout master"
             sh "git config --global credential.helper store"
             sh "jx step validate --min-jx-version 1.1.73"
             sh "jx step git credentials"
@@ -60,24 +56,21 @@ pipeline {
             sh 'mvn clean deploy'
 
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
-
-            sh "jx step validate --min-jx-version 1.2.36"
-            sh "jx step post build --image \$JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST:\$JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT/$ORG/$APP_NAME:\$(cat VERSION)"
+            sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
+            sh './updatebot.sh'
           }
         }
       }
       stage('Promote to Environments') {
         when {
-          branch 'develop'
+          branch 'master'
         }
         steps {
           dir ('./charts/ttc-campaigns-service') {
             container('maven') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
-
               // release the helm chart
               sh 'make release'
-
               // promote through all 'Auto' promotion Environments
               sh 'jx promote -b --all-auto --timeout 1h --version \$(cat ../../VERSION)'
             }
@@ -90,8 +83,8 @@ pipeline {
             cleanWs()
         }
         failure {
-            input """Pipeline failed.
-We will keep the build pod around to help you diagnose any failures.
+            input """Pipeline failed. 
+We will keep the build pod around to help you diagnose any failures. 
 
 Select Proceed or Abort to terminate the build pod"""
         }
