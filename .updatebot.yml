@@ -1,0 +1,6 @@
+github:
+  organisations:
+  - name: activiti
+    repositories:
+    - name: ttc-charts
+      useSinglePullRequest: true
