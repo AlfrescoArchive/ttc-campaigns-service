@@ -13,7 +13,7 @@
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
     <spring-cloud.version>Finchley.SR1</spring-cloud.version>
     <spring-cloud-k8s.version>0.3.0.RELEASE</spring-cloud-k8s.version>
-    <activiti-cloud-dependencies.version>7.0.156</activiti-cloud-dependencies.version>
+    <activiti-cloud-dependencies.version>7.0.157</activiti-cloud-dependencies.version>
     <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
   </properties>
   <dependencyManagement>
