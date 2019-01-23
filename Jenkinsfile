@@ -1,6 +1,13 @@
 pipeline {
     agent {
-      label "jenkins-maven"
+       kubernetes {
+              // Change the name of jenkins-maven label to be able to use yaml configuration snippet
+              label "maven-dind"
+              // Inherit from Jx Maven pod template
+              inheritFrom "maven-java11"
+              // Add pod configuration to Jenkins builder pod template
+              yamlFile "maven-dind.yaml"
+            }
     }
     environment {
       ORG               = 'activiti'
@@ -68,7 +75,7 @@ pipeline {
         steps {
           dir ('./charts/ttc-campaigns-service') {
             container('maven') {
-              sh 'jx step changelog --version v\$(cat ../../VERSION)'
+              //sh 'jx step changelog --version v\$(cat ../../VERSION)'
               // release the helm chart
               sh 'make release'
               // promote through all 'Auto' promotion Environments
