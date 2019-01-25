@@ -10,19 +10,19 @@
   </parent>
   <groupId>org.activiti.cloud.examples</groupId>
   <artifactId>campaigns-service</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>7.0.0.RC1</version>
   <name>Activiti Cloud :: Campaigns Service</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <java.version>11</java.version>
-    <activiti-cloud-dependencies.version>7.0.163</activiti-cloud-dependencies.version>	    
+    <activiti-cloud-dependencies.version>7.0.0.RC1</activiti-cloud-dependencies.version>	    
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>	    
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven-failsafe-plugin.version>2.18.1</maven-failsafe-plugin.version>	    
-    <activiti-cloud-dependencies.version>7.0.160</activiti-cloud-dependencies.version>
+    <activiti-cloud-dependencies.version>7.0.0.RC1</activiti-cloud-dependencies.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version> <!-- required for jx -->	    
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <maven-failsafe-plugin.version>3.0.0-M3</maven-failsafe-plugin.version>
