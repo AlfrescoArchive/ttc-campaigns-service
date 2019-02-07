@@ -22,7 +22,6 @@
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>	    
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven-failsafe-plugin.version>2.18.1</maven-failsafe-plugin.version>	    
-    <activiti-cloud-dependencies.version>7.0.160</activiti-cloud-dependencies.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version> <!-- required for jx -->	    
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <maven-failsafe-plugin.version>3.0.0-M3</maven-failsafe-plugin.version>
