@@ -10,14 +10,14 @@
   </parent>
   <groupId>org.activiti.cloud.examples</groupId>
   <artifactId>campaigns-service</artifactId>
-  <version>7.1.0-SNAPSHOT</version>
+  <version>7.1.0.M3.RC0</version>
   <name>Activiti Cloud :: Campaigns Service</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <java.version>11</java.version>
-    <activiti-cloud-dependencies.version>7.1.109</activiti-cloud-dependencies.version>	    
+    <activiti-cloud-dependencies.version>7.1.0.M3.RC0</activiti-cloud-dependencies.version>	    
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>	    
     <maven.compiler.target>${java.version}</maven.compiler.target>
